@@ -6,6 +6,7 @@ import { getAllPostSlugs, getPostData } from "~/lib/posts";
 import Layout from "~/components/layout";
 import Date from "~/components/date";
 import type { Frontmatter } from "~/types";
+import Link from "next/link";
 
 type Props = {
   code: string;
@@ -41,6 +42,7 @@ export default function BlogPost({ code, frontmatter }: Props) {
           className="prose mx-auto my-4 px-4 dark:prose-invert md:prose-lg lg:prose-xl prose-a:text-sky-600 dark:prose-a:text-sky-300 lg:my-16"
         >
           <Component />
+        <Link href="/">Finish Reading? Go back!</Link>
         </section>
       </article>
     </Layout>
