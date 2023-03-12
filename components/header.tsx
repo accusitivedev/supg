@@ -12,13 +12,6 @@ export default function Header() {
       </Link>
       <ThemeToggle />
       <nav className="text-lg tablet:ml-auto tablet:text-xl">
-        <ul className="my-4 flex gap-2 tablet:m-0">
-          <li>
-            <Link href="/blog" className="hover:underline">
-              Blog
-            </Link>
-          </li>
-        </ul>
       </nav>
     </header>
   );
