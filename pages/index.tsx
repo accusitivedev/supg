@@ -16,10 +16,6 @@ export default function IndexPage({ allPostsData }: Props) {
     <Layout>
       <Head>
         <title>supg &mdash; by abyditya</title>
-        <meta
-          name="description"
-          content="I'm a software engineer living in Hawaii. Lover of 80's music and udon noodles!"
-        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
