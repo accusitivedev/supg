@@ -32,7 +32,7 @@ export default function IndexPage({ allPostsData }: Props) {
           ✨ See{" "}
           <Link
             className="text-sky-600 underline dark:text-sky-300"
-            href="/blog"
+            href="/thread"
           >
             all posts
           </Link>
