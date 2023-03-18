@@ -3,10 +3,12 @@ import Head from "next/head";
 import { getMDXComponent } from "mdx-bundler/client";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { getAllPostSlugs, getPostData } from "~/lib/posts";
-import Layout from "~/components/layout";
+import { Layout } from "~/components/common";
 import Date from "~/components/date";
 import type { Frontmatter } from "~/types";
 import Link from "next/link";
+
+import Author from "~/components/common/author";
 
 type Props = {
   code: string;
@@ -32,17 +34,28 @@ export default function BlogPost({ code, frontmatter }: Props) {
             >
               {frontmatter.title}
             </h1>
-            <p className="text-gray-200 md:text-lg lg:text-xl">
-              <Date dateString={frontmatter.date} />
-            </p>
           </div>
         </header>
+
         <section
           itemProp="articleBody"
           className="prose mx-auto my-4 px-4 dark:prose-invert md:prose-lg lg:prose-xl prose-a:text-sky-600 dark:prose-a:text-sky-300 lg:my-16"
         >
+          <p className="text-gray-200 md:text-lg lg:text-xl">
+            <i className="fa-light fa-calendar-days mr-2"></i><Date dateString={frontmatter.date} /><i className="fa-light fa-user ml-7  mr-2"></i> {frontmatter.author !== 'abyditya' ? frontmatter.author : <Author frontmatter={{
+              title: "",
+              date: "",
+              description: "",
+              author: ""
+            }} /> }
+          </p>
+          <hr className="border border-b-gray-400" />
           <Component />
-        <Link href="/">Finish Reading? Go back!</Link>
+          <div className="text-center">
+            <p className="no-underline text-neutral-500 italic" style={{fontFamily: 'sans'}}>- The End -</p>
+          </div>
+          <hr className="border border-b-gray-400" />
+          <Link href="/thread" className="no-underline bg-indigo-600 px-3 py-2 rounded"><span className="text-gray-300">Go Back</span></Link>
         </section>
       </article>
     </Layout>

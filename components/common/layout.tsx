@@ -1,11 +1,11 @@
-import Header from "./header";
-import Footer from "./footer";
+import Header from "../UI/navigation";
+import Footer from "../UI/footer";
 
 type Props = {
   children: React.ReactNode;
 };
 
-export default function Layout({ children }: Props) {
+export function Layout({ children }: Props) {
   return (
     <>
       <a href="#main" className="sr-only focus:not-sr-only">

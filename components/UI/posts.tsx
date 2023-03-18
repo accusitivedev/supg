@@ -1,12 +1,12 @@
 import Link from "next/link";
-import Date from "./date";
+import Date from "../date";
 import { PostData } from "~/types";
 
 type Props = {
   allPostsData: PostData[];
 };
 
-export default function Posts({ allPostsData }: Props) {
+export function Posts({ allPostsData }: Props) {
   return (
     <div className="grid grid-cols-1 gap-4 md:grid-cols-2" role="grid">
       {allPostsData.map(({ title, slug, date }: PostData, index: number) => {
@@ -17,7 +17,7 @@ export default function Posts({ allPostsData }: Props) {
         return (
           <Link
             key={slug}
-            href={`/blog/${slug}`}
+            href={`/thread/${slug}`}
             itemProp="url"
             className={`rounded-md px-4 py-16 shadow-sm transition-transform duration-300 ease-in-out hover:-translate-y-1.5 md:px-10 ${linearGradient}`}
           >

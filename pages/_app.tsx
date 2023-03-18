@@ -12,11 +12,16 @@ import "~/styles/code.css";
 import "~/styles/spotify.css";
 import "~/styles/projects.css";
 
+import Head from "next/head";
+
 import type { AppProps } from "next/app";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider defaultTheme="light" attribute="class">
+      <Head>
+        <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.3.0/css/all.css" />
+      </Head>
       <Component {...pageProps} />
     </ThemeProvider>
   );

@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import Posts from "../../components/posts";
+import Posts from "../../components/UI/posts";
 
 describe("Posts", () => {
   const allPostsData = [

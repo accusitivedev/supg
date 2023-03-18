@@ -5,8 +5,8 @@ export default function Footer() {
 
   return (
     <footer className="mx-auto my-8 max-w-5xl px-4 text-base md:text-lg lg:text-xl">
-      <Link href="https://abyditya.space" className="hover:underline">
-        abyditya
+      <Link href="https://discord.gg/N5cNNCbmPu" target={"_blank"} className="hover:underline">
+        DesakuLab
       </Link>{" "}
       © {year}
     </footer>

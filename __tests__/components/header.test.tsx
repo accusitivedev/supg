@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import Header from "../../components/header";
+import Header from "../../components/UI/navigation";
 
 describe("Header", () => {
   it("renders the name", () => {

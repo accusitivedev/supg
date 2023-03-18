@@ -1,5 +1,7 @@
 import Link from "next/link";
-import ThemeToggle from "./theme-toggle";
+import ThemeToggle from "../theme-toggle";
+
+import APP_ROUTE from '../../lib/constant/route'
 
 export default function Header() {
   return (
@@ -8,10 +10,19 @@ export default function Header() {
         href="/"
         className="font-display text-xl font-bold text-gray-900 hover:underline dark:text-gray-100 tablet:text-2xl"
       >
-        supg
+        Supg
       </Link>
       <ThemeToggle />
       <nav className="text-lg tablet:ml-auto tablet:text-xl">
+        <ul className="my-4 flex gap-2 tablet:m-0">
+          {APP_ROUTE.map((route) => (
+            <li key={route.label}>
+              <Link href={route.path} className="hover:text-slate-300 mx-2">
+                {route.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
       </nav>
     </header>
   );

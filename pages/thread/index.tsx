@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { GetStaticProps } from "next";
-import Layout from "~/components/layout";
-import Posts from "~/components/posts";
+import { Layout } from "~/components/common";
+import { Posts } from "~/components/UI";
 import { getBlogPostData } from "~/lib/posts";
 import type { PostData } from "~/types";
 
@@ -23,7 +23,7 @@ export default function BlogPage({ allPostsData }: Props) {
 
       <header>
         <h1 className="mx-auto mb-8 max-w-5xl px-4 text-4xl font-bold text-gray-900 dark:text-gray-100 md:mb-10 md:mt-32 md:text-5xl lg:mb-12 lg:text-[3.5rem]">
-          Blog
+          Threads
         </h1>
       </header>
 
