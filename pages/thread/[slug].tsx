@@ -8,6 +8,8 @@ import Date from "~/components/date";
 import type { Frontmatter } from "~/types";
 import Link from "next/link";
 
+import Giscus from "@giscus/react";
+
 import Author from "~/components/common/author";
 
 type Props = {
@@ -47,15 +49,28 @@ export default function BlogPost({ code, frontmatter }: Props) {
               date: "",
               description: "",
               author: ""
-            }} /> }
+            }} />}
           </p>
           <hr className="border border-b-gray-400" />
           <Component />
           <div className="text-center">
-            <p className="no-underline text-neutral-500 italic" style={{fontFamily: 'sans'}}>- The End -</p>
+            <p className="no-underline text-neutral-500 italic" style={{ fontFamily: 'sans' }}>- The End -</p>
           </div>
           <hr className="border border-b-gray-400" />
           <Link href="/thread" className="no-underline bg-indigo-600 px-3 py-2 rounded"><span className="text-gray-300">Go Back</span></Link>
+          <div className="my-3">
+            <Giscus
+              key={"comments"}
+              repo="accusitivedev/supg"
+              repoId='R_kgDOGh4MEw'
+              category='General'
+              categoryId='DIC_kwDOGh4ME84CPxWe'
+              mapping='pathname'
+              reactionsEnabled='1'
+              emitMetadata='0'
+              theme="preferred_color_scheme"
+            />
+          </div>
         </section>
       </article>
     </Layout>

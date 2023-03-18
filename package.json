@@ -17,6 +17,7 @@
     "@fontsource/ibm-plex-sans": "^4.5.13",
     "@fontsource/inter": "^4.5.15",
     "@formspree/react": "^2.4.1",
+    "@giscus/react": "^2.2.8",
     "clsx": "^1.2.1",
     "date-fns": "^2.29.3",
     "date-fns-tz": "^2.0.0",
