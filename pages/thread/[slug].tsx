@@ -44,7 +44,7 @@ export default function BlogPost({ code, frontmatter }: Props) {
           itemProp="articleBody"
           className="prose mx-auto my-4 px-4 dark:prose-invert md:prose-lg lg:prose-xl prose-a:text-sky-600 dark:prose-a:text-sky-300 lg:my-16"
         >
-          <p className="text-gray-200 md:text-lg lg:text-xl">
+          <p className="dark:text-gray-200 light:text-gray-900 md:text-lg lg:text-xl">
             <i className="fa-light fa-calendar-days mr-2"></i><Date dateString={frontmatter.date} /><i className="fa-light fa-user ml-7  mr-2"></i> {frontmatter.verified !== true ? frontmatter.author : <Author frontmatter={{
               verified: true,
               author: "",
@@ -69,7 +69,7 @@ export default function BlogPost({ code, frontmatter }: Props) {
 function author({ frontmatter }: Props) {
   return (
     <>
-      <span data-te-toggle="tooltip" title="verified">{frontmatter.author} <i className="fa-solid fa-xs fa-badge-check text-rose-500"></i></span>
+      <span>{frontmatter.author} <i className="fa-solid fa-xs fa-badge-check text-rose-500"></i></span>
     </>
   )
 }
