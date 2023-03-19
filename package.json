@@ -1,5 +1,5 @@
 {
-  "name": "jpreagan.com",
+  "name": "abyditya",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -62,5 +62,22 @@
     "prettier-plugin-tailwindcss": "^0.2.2",
     "tailwindcss": "^3.2.6",
     "typescript": "^4.9.5"
-  }
+  },
+  "description": "yes",
+  "version": "1.0.0",
+  "main": "jest.config.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/accusitivedev/supg.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/accusitivedev/supg/issues"
+  },
+  "homepage": "https://github.com/accusitivedev/supg#readme"
 }

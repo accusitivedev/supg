@@ -17,6 +17,7 @@ type Props = {
   frontmatter: Frontmatter;
 };
 
+
 export default function BlogPost({ code, frontmatter }: Props) {
   const Component = React.useMemo(() => getMDXComponent(code), [code]);
 
@@ -44,11 +45,12 @@ export default function BlogPost({ code, frontmatter }: Props) {
           className="prose mx-auto my-4 px-4 dark:prose-invert md:prose-lg lg:prose-xl prose-a:text-sky-600 dark:prose-a:text-sky-300 lg:my-16"
         >
           <p className="text-gray-200 md:text-lg lg:text-xl">
-            <i className="fa-light fa-calendar-days mr-2"></i><Date dateString={frontmatter.date} /><i className="fa-light fa-user ml-7  mr-2"></i> {frontmatter.author !== 'abyditya' ? frontmatter.author : <Author frontmatter={{
-              title: "",
-              date: "",
+            <i className="fa-light fa-calendar-days mr-2"></i><Date dateString={frontmatter.date} /><i className="fa-light fa-user ml-7  mr-2"></i> {frontmatter.verified !== true ? frontmatter.author : <Author frontmatter={{
+              verified: true,
+              author: "",
               description: "",
-              author: ""
+              date: "",
+              title: ""
             }} />}
           </p>
           <hr className="border border-b-gray-400" />
@@ -58,23 +60,18 @@ export default function BlogPost({ code, frontmatter }: Props) {
           </div>
           <hr className="border border-b-gray-400" />
           <Link href="/thread" className="no-underline bg-indigo-600 px-3 py-2 rounded"><span className="text-gray-300">Go Back</span></Link>
-          <div className="my-3">
-            <Giscus
-              key={"comments"}
-              repo="accusitivedev/supg"
-              repoId='R_kgDOGh4MEw'
-              category='General'
-              categoryId='DIC_kwDOGh4ME84CPxWe'
-              mapping='pathname'
-              reactionsEnabled='1'
-              emitMetadata='0'
-              theme="preferred_color_scheme"
-            />
-          </div>
         </section>
       </article>
     </Layout>
   );
+}
+
+function author({ frontmatter }: Props) {
+  return (
+    <>
+      <span data-te-toggle="tooltip" title="verified">{frontmatter.author} <i className="fa-solid fa-xs fa-badge-check text-rose-500"></i></span>
+    </>
+  )
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {

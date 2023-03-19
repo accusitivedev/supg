@@ -4,7 +4,7 @@ const APP_ROUTE = [
         label: 'Home'
     },
     {
-        path: '/submit',
+        path: 'https://forms.gle/vuxA9z1beNypCb5j9',
         label: 'submit'
     }
 ]

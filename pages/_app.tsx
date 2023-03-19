@@ -9,8 +9,6 @@ import "@fontsource/ibm-plex-mono/400.css";
 import "~/styles/globals.css";
 import "~/styles/expand.css";
 import "~/styles/code.css";
-import "~/styles/spotify.css";
-import "~/styles/projects.css";
 
 import Head from "next/head";
 

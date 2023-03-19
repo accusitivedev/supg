@@ -3,6 +3,7 @@ export type Frontmatter = {
   date: string;
   description: string;
   author: string;
+  verified: boolean;
 };
 
 export type PostData = {
